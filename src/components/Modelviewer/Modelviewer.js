@@ -2,6 +2,7 @@ import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import modelGlb from '../../assets/glb/FZV4.glb';
 
+
 const Modelviewer = () => {
     const modelRef = React.useRef();
   return (
@@ -17,7 +18,7 @@ const Modelviewer = () => {
     ref={(ref) => {
         modelRef.current = ref;
       }}
-      style={{ width: '100%', height: '820px', display: 'block', margin: '0 auto' }} // Adjust width as needed
+      style={{ width: '100%', height: '450px', display: 'block', margin: '0 auto' }} // Adjust width as needed
       >
 
     </model-viewer>

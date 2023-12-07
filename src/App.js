@@ -9,12 +9,13 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import './index.css';
 
 function App() {
   const [value, setValue] = React.useState(0);
 
   return (
-    <Grid container spacing={2} justifyContent="center" alignItems="center" > {/* Full height and centered items */}
+    <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ height: '100vh' }}> {/* Set container height */}
       <Grid item xs={12}>
         <Navbar />
       </Grid>
@@ -48,7 +49,7 @@ function App() {
         </Box>
       </Grid>
 
-      <Grid item xs={12} sx={{ pt: 8 }}>
+      <Grid item xs={12} sx={{ pt: 2 }}>
         <Productviewer />
       </Grid>
 

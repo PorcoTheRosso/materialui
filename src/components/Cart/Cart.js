@@ -3,6 +3,8 @@ import { Box, Card, CardContent, CardMedia, IconButton, Typography, Divider, But
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import productimg from '../../assets/img/05.png'
+
+
 const CartItem = ({ item }) => {
     const [quantity, setQuantity] = useState(1); // Placeholder for quantity management
 
@@ -18,7 +20,7 @@ const CartItem = ({ item }) => {
         <Card sx={{ display: 'flex', marginBottom: 2, alignItems: 'center' }}>
             <CardMedia
                 component="img"
-                sx={{ width: 150, height: 150, objectFit: 'contain' }} // Set both width and height to make it box-shaped
+                sx={{ width: 100, height: 100, objectFit: 'contain' }} // Set both width and height to make it box-shaped
                 image={item.image} // Placeholder for item image
                 alt={item.name} // Placeholder for item name
             />

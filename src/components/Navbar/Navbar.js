@@ -36,8 +36,8 @@ const Navbar = () => {
             <AppBar position="static">
                 <Container maxWidth="xxl">
                     <Toolbar disableGutters>
-                    <Box sx={{ position: 'absolute', left: '0%', top: '130%', transform: 'translateY(-50%)'  }}>
-              <img src={logoImage} alt="Logo" style={{ height: '170px' }} /> {/* Adjust height as needed */}
+                    <Box sx={{ position: 'absolute', left: '0%', top: '100%', transform: 'translateY(-50%)'  }}>
+              <img src={logoImage} alt="Logo" style={{ height: '120px' }} /> {/* Adjust height as needed */}
             
             </Box>
                          {/* Right-aligned container for "Track Shipping" and Cart Icon */}
