@@ -3,7 +3,7 @@ import { Box, Card, CardContent, CardMedia, IconButton, Typography, Divider, But
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import productimg from '../../assets/img/05.png'
-
+import '../../index.css';
 
 const CartItem = ({ item }) => {
     const [quantity, setQuantity] = useState(1); // Placeholder for quantity management
@@ -24,18 +24,19 @@ const CartItem = ({ item }) => {
                 image={item.image} // Placeholder for item image
                 alt={item.name} // Placeholder for item name
             />
-            <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow: 1 }}>
-                <Typography variant="h6">{item.price}</Typography> {/* Placeholder for item price */}
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <IconButton onClick={handleDecreaseQuantity} aria-label="reduce quantity">
-                        <RemoveIcon />
-                    </IconButton>
-                    <Typography sx={{ margin: '0 10px' }}>{quantity}</Typography>
-                    <IconButton onClick={handleIncreaseQuantity} aria-label="increase quantity">
-                        <AddIcon />
-                    </IconButton>
-                </Box>
-            </CardContent>
+<CardContent sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexGrow: 1 }}>
+    <Typography variant="h6" sx={{ textAlign: 'center' }}>{item.price}</Typography> {/* Centered item price */}
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <IconButton onClick={handleDecreaseQuantity} aria-label="reduce quantity">
+            <RemoveIcon />
+        </IconButton>
+        <Typography sx={{ margin: '0 10px' }}>{quantity}</Typography>
+        <IconButton onClick={handleIncreaseQuantity} aria-label="increase quantity">
+            <AddIcon />
+        </IconButton>
+    </Box>
+</CardContent>
+
         </Card>
     );
 };
@@ -58,14 +59,15 @@ const Cart = () => {
 
             <Divider />
 
-            <Box sx={{ padding: 2, display: 'flex', justifyContent: 'space-between' }}>
-                <Typography>Total Price (excl VAT & Shipping):</Typography>
-                <Typography>{totalPrice}</Typography>
-            </Box>
+<Box sx={{ padding: 2, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <Typography>Total Price (excl VAT & Shipping):</Typography>
+    <Typography>{totalPrice}</Typography>
 
-            <Box sx={{ padding: 2 }}>
-                <Button variant="contained" sx={{ width: '100%' }}>CHECKOUT</Button>
-            </Box>
+    <Box sx={{ padding: 2, width: '100%' }}>
+        <Button variant="contained" sx={{ width: '100%' }}>CHECKOUT</Button>
+    </Box>
+</Box>
+
         </Box>
     );
 };

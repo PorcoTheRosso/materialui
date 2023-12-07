@@ -12,7 +12,7 @@ import logoImage from '../../assets/img/logo-asset-01.png';
 import Cart from '../Cart/Cart';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Popover from '@mui/material/Popover';
-
+import '../../index.css';
 
 const Navbar = () => {
 
@@ -33,7 +33,8 @@ const Navbar = () => {
     
     return (
         <Grid item xs={12}>
-            <AppBar position="static">
+           <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
+
                 <Container maxWidth="xxl">
                     <Toolbar disableGutters>
                     <Box sx={{ position: 'absolute', left: '0%', top: '100%', transform: 'translateY(-50%)'  }}>
@@ -42,19 +43,34 @@ const Navbar = () => {
             </Box>
                          {/* Right-aligned container for "Track Shipping" and Cart Icon */}
                          <Box sx={{ display: 'flex', flexGrow: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
-                            {/* Track Shipping Button */}
-                            <Button
-                                key="Track Shipping"
-                                sx={{ my: 2, color: 'white', display: 'block', mr: 8 }} // Added marginRight of 2 (8px)
-                            >
-                                Track Shipping
-                            </Button>
+    {/* Clickable Track Shipping Label */}
+    <Button
+        key="Track Shipping"
+        onClick={() => { /* handle your click event here */ }}
+        sx={{ 
+            my: 2, 
+            color: 'black', 
+            display: 'block', 
+            mr: 8,
+            backgroundColor: 'transparent', // Make background transparent
+            boxShadow: 'none', // Remove shadow
+            '&:hover': {
+                backgroundColor: 'transparent', // Keep background transparent on hover
+                boxShadow: 'none' // Remove shadow on hover
+            },
+            //textTransform: 'none', // Optional: prevent uppercase text
+            border: 'none' // Remove border
+        }}
+    >
+        Track Shipping
+    </Button>
 
                             {/* Cart Icon */}
                             <ClickAwayListener onClickAway={handleCloseCart}>
                                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                     <Tooltip title="Open Cart">
-                                        <IconButton onClick={handleToggleCart} sx={{ p: 0 }}>
+                                    <IconButton onClick={handleToggleCart} sx={{ p: 0, color: 'black' }}>
+
                                             <ShoppingCartIcon />
                                         </IconButton>
                                     </Tooltip>

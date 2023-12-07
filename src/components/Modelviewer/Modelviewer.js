@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import modelGlb from '../../assets/glb/FZV4.glb';
-
+import '../../index.css';
 
 const Modelviewer = () => {
     const modelRef = React.useRef();

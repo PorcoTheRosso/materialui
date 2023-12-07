@@ -20,13 +20,22 @@ code {
   flex-direction: column;
 }
 
-/* Navbar height adjustment */
+/* Navbar styling */
 .navbar {
   height: 60px; /* Adjust based on your actual Navbar height */
+  background-color: white; /* White background */
+  color: black; /* Black text and icons */
 }
 
 /* Main content area */
 .main-content {
   flex-grow: 1;
   overflow-y: auto; /* Allow scrolling within main content if needed */
+}
+
+/* Global button styling */
+button {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border: 1px solid black; /* Black border for outlined buttons */
 }
