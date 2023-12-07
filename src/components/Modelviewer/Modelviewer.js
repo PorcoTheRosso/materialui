@@ -17,7 +17,7 @@ const Modelviewer = () => {
     ref={(ref) => {
         modelRef.current = ref;
       }}
-      style={{ width: '1920px', height: '820px', display: 'block', margin: '0 auto' }} // Adjust width as needed
+      style={{ width: '100%', height: '820px', display: 'block', margin: '0 auto' }} // Adjust width as needed
       >
 
     </model-viewer>
