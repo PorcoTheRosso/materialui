@@ -23,16 +23,13 @@ function App() {
         <Modelviewer />
       </Grid>
 
+
       <Grid item>
-        <Button variant="outlined">AR VIEW</Button>
+        <Button variant="outlined">PRICE</Button>
       </Grid>
 
       <Grid item>
         <Button variant="contained">BUY</Button>
-      </Grid>
-
-      <Grid item xs={12}>
-        <Productviewer />
       </Grid>
 
       <Grid item xs={12}>
@@ -50,6 +47,12 @@ function App() {
           </BottomNavigation>
         </Box>
       </Grid>
+
+      <Grid item xs={12} sx={{ pt: 8 }}>
+        <Productviewer />
+      </Grid>
+
+      
     </Grid>
   );
 }
