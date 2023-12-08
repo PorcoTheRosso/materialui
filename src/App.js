@@ -50,6 +50,7 @@ function App() {
           position: 'absolute',
           width: '100%',
           height: '100%',
+          top: 50,
           backgroundImage: `url(${bgvideo})`,
           backgroundSize: 'cover',
           zIndex: -1
