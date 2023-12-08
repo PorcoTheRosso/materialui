@@ -12,7 +12,8 @@ import logoImage from '../../assets/img/logo-asset-01.png';
 import Cart from '../Cart/Cart';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Popover from '@mui/material/Popover';
-import '../../index.css';
+
+
 
 const Navbar = () => {
 

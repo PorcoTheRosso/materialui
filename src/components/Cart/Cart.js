@@ -5,6 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import productimg from '../../assets/img/05.png'
 import '../../index.css';
 
+
 const CartItem = ({ item }) => {
     const [quantity, setQuantity] = useState(1); // Placeholder for quantity management
 

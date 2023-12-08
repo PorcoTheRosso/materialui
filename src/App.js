@@ -9,9 +9,9 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import './index.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import bgvideo from './assets/img/bg_animation.gif';
 
 
 // Create a theme instance.
@@ -24,18 +24,36 @@ const theme = createTheme({
           backgroundColor: 'black', // For contained button
           color: 'white',
           borderColor: 'black', // For outlined button
+          '&:hover': { // Style for hover state
+            backgroundColor: 'darkgrey', // Dark grey color on hover
+            // If you want to change for outlined button specifically, add another rule
+          },
         },
       },
     },
+
+    
   },
 });
 
 function App() {
   const [value, setValue] = React.useState(0);
+  
+  
 
+  
   return (
     <ThemeProvider theme={theme}>
-    <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ height: '100vh' }}> {/* Set container height */}
+    <Grid container spacing={2} justifyContent="center" alignItems="center" style={{ height: '100vh', position: 'relative' }}> {/* Set container height */}
+        {/* Background GIF */}
+        <div style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${bgvideo})`,
+          backgroundSize: 'cover',
+          zIndex: -1
+        }} />
       <Grid item xs={12}>
         <Navbar />
       </Grid>
@@ -47,12 +65,12 @@ function App() {
 
       <Grid item>
     <Button
-        variant="outlined"
+        variant="contained"
         sx={{ 
-            backgroundColor: 'transparent', // Make background transparent
+            backgroundColor: 'white', // Make background transparent
             boxShadow: 'none', // Remove shadow
             '&:hover': {
-                backgroundColor: 'transparent', // Keep background transparent on hover
+                backgroundColor: 'white', // Keep background transparent on hover
                 boxShadow: 'none' // Remove shadow on hover
             },
             border: 'none', // Remove border
@@ -70,35 +88,45 @@ function App() {
 
 
       <Grid item>
+        
         <Button variant="contained">BUY</Button>
       </Grid>
 
       <Grid item xs={12}>
-        <Box sx={{ width: 500, margin: 'auto' }}> {/* Centered box */}
-        <BottomNavigation
-  showLabels
-  value={value}
-  onChange={(event, newValue) => {
-    setValue(newValue);
-  }}
-  style={{ backgroundColor: 'white', color: 'black' }} // Change background and text color
->
-  <BottomNavigationAction 
-    icon={<ChevronLeftIcon style={{ fontSize: 'large' }} />} // Increase icon size
-    style={{ fontSize: '1rem' }} // Increase label text size
-  />
-  <BottomNavigationAction 
-    label="Product Name" 
-    style={{ fontSize: '1rem' }}
-  />
-  <BottomNavigationAction 
-    icon={<ChevronRightIcon style={{ fontSize: 'large' }} />} 
-    style={{ fontSize: '1rem' }}
-  />
-</BottomNavigation>
-
+        <Box sx={{ width: 500, margin: 'auto', overflow: 'hidden', borderRadius: '10px' }}>
+          <BottomNavigation
+            showLabels
+            value={value}
+            onChange={(event, newValue) => {
+                setValue(newValue);
+            }}
+            sx={{
+                backgroundColor: 'white', 
+                boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.3)', // Box shadow added here
+                '& .MuiBottomNavigationAction-root': { // Increase specificity
+                    color: 'black !important', // Ensuring color override
+                    marginX: 1, // Apply horizontal margin
+                    '&.Mui-selected': { // Targeting the selected state
+                        color: 'black !important',
+                    }
+                }
+            }}
+          >
+            <BottomNavigationAction 
+                icon={<ChevronLeftIcon />} 
+            />
+            <BottomNavigationAction 
+                label="Product Name" 
+            />
+            <BottomNavigationAction 
+                icon={<ChevronRightIcon />} 
+            />
+          </BottomNavigation>
         </Box>
       </Grid>
+
+
+
 
       <Grid item xs={12} sx={{ pt: 2 }}>
         <Productviewer />
